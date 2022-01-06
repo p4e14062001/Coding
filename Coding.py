@@ -20,6 +20,7 @@ class Hash_Sort:
 class Dynamic_Programming:
     '''
     https://www.interviewbit.com/problems/0-1-knapsack/
+    MEDIUM
     '''
     def knapsack_01(self, values, weights, capacity):
         L = len(values)
@@ -34,7 +35,39 @@ class Dynamic_Programming:
                     dp[i][j] = dp[i - 1][j]
         return dp[L][capacity]
     '''
-    https://leetcode.com/problems/partition-equal-subset-sum/
+    https://practice.geeksforgeeks.org/problems/subset-sum-problem-1611555638/1/
+    MEDIUM
     '''
-    def partition_equal_sum(self, arr):
-        
+    def subset_sum(self, arr, s):
+        N = len(arr)
+        dp = [[False for _ in range(s + 1)] for _ in range(N + 1)]
+        for i in range(N + 1):
+            for j in range(s + 1):
+                if j == 0:
+                    dp[i][j] = True
+                elif arr[i] <= j:
+                    dp[i][j] = dp[i - 1][j] or (dp[i - 1][j - arr[i]])
+                else:
+                    dp[i][j] = dp[i - 1][j]
+        return dp[N][s]
+    '''
+    https://leetcode.com/problems/partition-equal-subset-sum/
+    MEDIUM
+    '''
+    def equal_sum(self, arr):
+        s = sum(arr)
+        if s % 2 == 0:
+            s = s // 2
+        else:
+            return False
+        N = len(arr)
+        dp = [[False for _ in range(s + 1)] for _ in range(N + 1)]
+        for i in range(N + 1):
+            for j in range(s + 1):
+                if j == 0:
+                    dp[i][j] = True
+                elif arr[i] <= j:
+                    dp[i][j] = dp[i - 1][j] or (dp[i - 1][j - arr[i]])
+                else:
+                    dp[i][j] = dp[i - 1][j]
+        return dp[N][s]
