@@ -1,3 +1,29 @@
+class Mathematics:
+    '''
+    https://leetcode.com/problems/powx-n/
+    MEDIUM
+    '''
+    def recursive_power(self, a, n):
+        if n == 0:
+            return 1
+        elif  n % 2 == 0:
+            res = self.recursive_power(a, n // 2)
+            return res * res
+        else:
+            res = self.recursive_power(a, n // 2)
+            return res * res * a
+    '''
+    https://leetcode.com/problems/powx-n/
+    MEDIUM
+    '''
+    def iterative_power(self, a, n):
+        res = 1
+        while n != 0:
+            if n % 2 == 1:
+                res = res * a
+            a = a * a
+            n = n // 2
+        return res
 class Hash_Sort:
     '''
     https://practice.geeksforgeeks.org/problems/winner-of-an-election-where-votes-are-represented-as-candidate-names-1587115621/1
