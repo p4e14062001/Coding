@@ -1,6 +1,8 @@
 class Dynamic Programming:
     '''
+    TYPE 1
     https://leetcode.com/problems/coin-change/ ---> MEDIUM
+    https://cses.fi/problemset/task/1634
     '''
     def solve(self, amount, coins):
         if amount < 0:
@@ -17,7 +19,9 @@ class Dynamic Programming:
             return -1
         return ans
     '''
+    TYPE 1
     https://leetcode.com/problems/coin-change/ ---> MEDIUM
+    https://cses.fi/problemset/task/1634
     '''
     def solve(self, amount, coins, ready, values):
         if amount < 0:
@@ -38,7 +42,9 @@ class Dynamic Programming:
             return -1
         return ans
     '''
+    TYPE 1
     https://leetcode.com/problems/coin-change/ ---> MEDIUM
+    https://cses.fi/problemset/task/1634
     '''
     def solve(self, amount, coins, values):
         values[0] = 0
@@ -54,7 +60,9 @@ class Dynamic Programming:
             return -1
         return ans
     '''
+    TYPE 1
     https://leetcode.com/problems/coin-change/ ---> MEDIUM
+    https://cses.fi/problemset/task/1634
     '''
     def solve(self, amount, coins, values):
         for i in range(len(values)):
@@ -72,7 +80,9 @@ class Dynamic Programming:
             return -1
         return ans
     '''
+    TYPE 1
     https://leetcode.com/problems/coin-change/ ---> MEDIUM
+    https://cses.fi/problemset/task/1634
     '''
     def solve(self, amount, coins, values, first):
         values[0] = 0
@@ -94,3 +104,7 @@ class Dynamic Programming:
         if len(ans) == 0 and amount != 0:
             return -1
         return len(ans)
+    '''
+    
+    '''
+    def 
