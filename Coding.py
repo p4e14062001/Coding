@@ -1,3 +1,42 @@
+class Dynamic Programming:
+    '''
+    https://leetcode.com/problems/coin-change/ ---> MEDIUM
+    '''
+    def solve(self, amount, coins):
+        if amount < 0:
+            return float('inf')
+        if amount == 0:
+            return 0
+        m = float('inf')
+        for i in coins:
+            m = min(m, self.solve(amount - i, coins) + 1)
+        return m
+    def coinChangeRecursion(self, coins, amount):
+        ans = self.solve(amount, coins)
+        if ans == float('inf'):
+            return -1
+        return ans
+    '''
+    https://leetcode.com/problems/coin-change/ ---> MEDIUM
+    '''
+    def solve(self, amount, coins, ready, values):
+        if amount < 0:
+            return float('inf')
+        if amount == 0:
+            return 0
+        if ready[amount]:
+            return values[amount]
+        m = float('inf')
+        for i in coins:
+            m = min(m, self.solve(amount - i, coins, ready, values) + 1)
+        ready[amount] = True
+        values[amount] = m
+        return m
+    def coinChangeMemoization(self, coins, amount):
+        ans = self.solve(amount, coins, [False for _ in range(amount + 1)], [-1 for _ in range(amount + 1)])
+        if ans == float('inf'):
+            return -1
+        return ans
 class Mathematics:
     '''
     https://leetcode.com/problems/powx-n/
