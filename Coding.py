@@ -71,3 +71,26 @@ class Dynamic Programming:
         if ans == float('inf'):
             return -1
         return ans
+    '''
+    https://leetcode.com/problems/coin-change/ ---> MEDIUM
+    '''
+    def solve(self, amount, coins, values, first):
+        values[0] = 0
+        for j in range(1, amount + 1):
+            values[j] = float('inf')
+            for i in range(len(coins)):
+                if j - coins[i] >= 0 and values[j - coins[i]] + 1 < values[j]:
+                    values[j] = values[j - coins[i]] + 1
+                    first[j] = coins[i]
+        combination = []
+        if values[-1] != float('inf'):
+            while amount > 0:
+                combination.append(first[amount])
+                amount = amount - first[amount]
+        return combination
+    def coinChangeIteration(self, coins, amount):
+        ans = self.solve(amount, coins, [float('inf') for _ in range(amount + 1)], [0 for _ in range(amount + 1)])
+        print(ans)
+        if len(ans) == 0 and amount != 0:
+            return -1
+        return len(ans)
