@@ -5,6 +5,54 @@ class Mathematics:
 	'''
 	def s(self, a, b):
 		return a + b
+	'''
+	TYPE 1
+	https://cses.fi/dt/task/313
+	'''
+	def algo(self, a):
+		while a != 1:
+			print(a, end = ' ')
+			if a % 2 == 0:
+				a = a // 2
+			else:
+				a = 3 * a + 1
+		print(1)
+	'''
+	TYPE 1
+	https://cses.fi/dt/task/314
+	'''
+	def number_n_bits(self, n):
+		return 2 ** n
+	'''
+	TYPE 1
+	https://cses.fi/dt/task/315
+	'''
+	def volume(self, r):
+		import math
+		return (math.pi) * (4 / 3) * (r ** 3)
+	'''
+	TYPE 1
+	https://cses.fi/dt/task/316
+	https://practice.geeksforgeeks.org/problems/day-of-the-week1637/1/
+	https://leetcode.com/problems/day-of-the-week/
+	https://www.lintcode.com/problem/2661/
+	'''
+	def day_from_date(self, s):
+		s = input().split('.')
+		day = int(s[0])
+		month = int(s[1])
+		year = int(s[2])
+		k = day
+		m = month - 2
+		if m <= 0:
+			m = m + 12
+		C = year // 100
+		Y = year % 100
+		if month == 1 or month == 2:
+			Y = Y - 1
+		W = (k + int(2.6 * m - 0.2) - 2 * C + Y + Y // 4 + C // 4) % 7
+		days = ["sunnuntai", "maanantai", "tiistai", "keskiviikko", "torstai", "perjantai", "lauantai"]
+		print(days[W])
 	def sum_numbers_power1(self, n):
 		return (n * (n + 1)) / 2
 	def sum_numbers_power2(self, n):
@@ -48,57 +96,3 @@ class Mathematics:
 		return len(s)
 	def find(self, s, a):
 	    return a in s
-	def intersection(self, arr, arr0):
-
-m = Mathematics()
-i = input("Enter two numbers\n")
-print(m.s(int(i.split()[0]), int(i.split()[1])))
-n = int(input("Input number of natural numbers\n"))
-print("Input number of natural numbers", n)
-print("Sum of power 1 is", m.sum_numbers_power1(n))
-print("Sum of power 2 is", m.sum_numbers_power2(n))
-print("Sum of power 3 is", m.sum_numbers_power3(n))
-p = int(input("Input power on each natural number\n"))
-print("Power entered is", p)
-print("Sum of power of natural numbers is", m.sum_numbers_powerk(n, p))
-arr = input("Enter array\n").split()
-n = len(arr)
-for i in range(n):
-	arr[i] = int(arr[i])
-print("Array input is", arr)
-option = input("Want to check if array is AP (Y/N)?\n")
-if option == 'Y':
-	if m.check_ap(arr):
-		print("Array is an AP")
-		option = input("Want to find sum and common difference (Y/N)?\n")
-		if option == 'Y':
-			print("Sum of the AP is", m.sum_ap(arr))
-			print("Common difference of the AP is", arr[1] - arr[0])
-	else:
-		print("Array is not an AP")
-option = input("Want to check if array is GP (Y/N)?\n")
-if option == 'Y':
-	if m.check_gp(arr):
-		print("Array is a GP")
-		option = input("Want to find sum and common ratio (Y/N)?\n")
-		if option == 'Y':
-			print("Sum of the GP is", m.sum_gp(arr))
-			print("Common ratio of the GP is", arr[1] / arr[0])
-	else:
-		print("Array is not a GP")
-n = int(input("Enter number of harmonics\n"))
-print("The number is", n)
-print("Sum of n harmonics", m.sum_hm(n))
-print("Array set is", m.make_set(arr))
-print("Cardinality of set is", m.size_set(arr))
-a = int(input("Enter number to check if it is in set\n"))
-if m.find(s, a):
-    print('s has a')
-else:
-    print('s does NOT have a')
-arr0 = input("Enter array\n").split()
-n = len(arr0)
-for i in range(n):
-	arr0[i] = int(arr0[i])
-print("Array input is", arr0)
-print('Intersection of arr and arr0 is', m.intersection(arr, arr0))
