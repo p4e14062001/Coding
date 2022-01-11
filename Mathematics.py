@@ -31,6 +31,11 @@ class Mathematics:
 		    return ((arr[-1] * (arr[1] / arr[0])) - arr[0]) / ((arr[1] / arr[0]) - 1)
 		else:
 		    print(n * arr[0])
+	def sum_hm(self, n):
+		s = 0
+		for i in range(1, n + 1):
+			s = s + (1 / i)
+		return s
 m = Mathematics()
 n = int(input("Input number of natural numbers\n"))
 print("Input number of natural numbers", n)
@@ -65,3 +70,6 @@ if option == 'Y':
 			print("Common ratio of the GP is", arr[1] / arr[0])
 	else:
 		print("Array is not a GP")
+n = int(input("Enter number of harmonics\n"))
+print("The number is", n)
+print("Sum of n harmonics", m.sum_hm(n))
