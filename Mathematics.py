@@ -1,4 +1,10 @@
 class Mathematics:
+	'''
+	TYPE 1
+	https://cses.fi/dt/task/312
+	'''
+	def s(self, a, b):
+		return a + b
 	def sum_numbers_power1(self, n):
 		return (n * (n + 1)) / 2
 	def sum_numbers_power2(self, n):
@@ -36,7 +42,17 @@ class Mathematics:
 		for i in range(1, n + 1):
 			s = s + (1 / i)
 		return s
+	def make_set(self, s):
+		return set(s)
+	def size_set(self, s):
+		return len(s)
+	def find(self, s, a):
+	    return a in s
+	def intersection(self, arr, arr0):
+
 m = Mathematics()
+i = input("Enter two numbers\n")
+print(m.s(int(i.split()[0]), int(i.split()[1])))
 n = int(input("Input number of natural numbers\n"))
 print("Input number of natural numbers", n)
 print("Sum of power 1 is", m.sum_numbers_power1(n))
@@ -73,3 +89,16 @@ if option == 'Y':
 n = int(input("Enter number of harmonics\n"))
 print("The number is", n)
 print("Sum of n harmonics", m.sum_hm(n))
+print("Array set is", m.make_set(arr))
+print("Cardinality of set is", m.size_set(arr))
+a = int(input("Enter number to check if it is in set\n"))
+if m.find(s, a):
+    print('s has a')
+else:
+    print('s does NOT have a')
+arr0 = input("Enter array\n").split()
+n = len(arr0)
+for i in range(n):
+	arr0[i] = int(arr0[i])
+print("Array input is", arr0)
+print('Intersection of arr and arr0 is', m.intersection(arr, arr0))
