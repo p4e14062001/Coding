@@ -2,9 +2,9 @@ class Dynamic Programming:
     '''
     TYPE 1
     https://leetcode.com/problems/coin-change/
-	https://cses.fi/problemset/task/1634
-	https://www.lintcode.com/problem/coin-change/description
-	https://practice.geeksforgeeks.org/problems/number-of-coins1824/1/
+    https://cses.fi/problemset/task/1634
+    https://www.lintcode.com/problem/coin-change/description
+    https://practice.geeksforgeeks.org/problems/number-of-coins1824/1/
     '''
     def solve(self, amount, coins):
         if amount < 0:
@@ -23,9 +23,9 @@ class Dynamic Programming:
     '''
     TYPE 1
     https://leetcode.com/problems/coin-change/
-	https://cses.fi/problemset/task/1634
-	https://www.lintcode.com/problem/coin-change/description
-	https://practice.geeksforgeeks.org/problems/number-of-coins1824/1/
+    https://cses.fi/problemset/task/1634
+    https://www.lintcode.com/problem/coin-change/description
+    https://practice.geeksforgeeks.org/problems/number-of-coins1824/1/
     '''
     def solve(self, amount, coins, ready, values):
         if amount < 0:
@@ -48,9 +48,9 @@ class Dynamic Programming:
     '''
     TYPE 1
     https://leetcode.com/problems/coin-change/
-	https://cses.fi/problemset/task/1634
-	https://www.lintcode.com/problem/coin-change/description
-	https://practice.geeksforgeeks.org/problems/number-of-coins1824/1/
+    https://cses.fi/problemset/task/1634
+    https://www.lintcode.com/problem/coin-change/description
+    https://practice.geeksforgeeks.org/problems/number-of-coins1824/1/
     '''
     def solve(self, amount, coins, values):
         values[0] = 0
@@ -68,9 +68,9 @@ class Dynamic Programming:
     '''
     TYPE 1
     https://leetcode.com/problems/coin-change/
-	https://cses.fi/problemset/task/1634
-	https://www.lintcode.com/problem/coin-change/description
-	https://practice.geeksforgeeks.org/problems/number-of-coins1824/1/
+    https://cses.fi/problemset/task/1634
+    https://www.lintcode.com/problem/coin-change/description
+    https://practice.geeksforgeeks.org/problems/number-of-coins1824/1/
     '''
     def solve(self, amount, coins, values):
         for i in range(len(values)):
@@ -90,9 +90,9 @@ class Dynamic Programming:
     '''
     TYPE 1
     https://leetcode.com/problems/coin-change/
-	https://cses.fi/problemset/task/1634
-	https://www.lintcode.com/problem/coin-change/description
-	https://practice.geeksforgeeks.org/problems/number-of-coins1824/1/
+    https://cses.fi/problemset/task/1634
+    https://www.lintcode.com/problem/coin-change/description
+    https://practice.geeksforgeeks.org/problems/number-of-coins1824/1/
     '''
     def solve(self, amount, coins, values, first):
         values[0] = 0
