@@ -1,12 +1,10 @@
 class Mathematics:
 	'''
-	TYPE 1
 	https://cses.fi/dt/task/312
 	'''
 	def s(self, a, b):
 		return a + b
 	'''
-	TYPE 1
 	https://cses.fi/dt/task/313
 	'''
 	def algo(self, a):
@@ -18,27 +16,24 @@ class Mathematics:
 				a = 3 * a + 1
 		print(1)
 	'''
-	TYPE 1
 	https://cses.fi/dt/task/314
 	'''
 	def number_n_bits(self, n):
 		return 2 ** n
 	'''
-	TYPE 1
 	https://cses.fi/dt/task/315
 	'''
 	def volume(self, r):
 		import math
 		return (math.pi) * (4 / 3) * (r ** 3)
 	'''
-	TYPE 1
 	https://cses.fi/dt/task/316
 	https://practice.geeksforgeeks.org/problems/day-of-the-week1637/1/
 	https://leetcode.com/problems/day-of-the-week/
 	https://www.lintcode.com/problem/2661/
 	'''
 	def day_from_date(self, s):
-		s = input().split('.')
+		s = s.split('.')
 		day = int(s[0])
 		month = int(s[1])
 		year = int(s[2])
@@ -54,7 +49,6 @@ class Mathematics:
 		days = ["sunnuntai", "maanantai", "tiistai", "keskiviikko", "torstai", "perjantai", "lauantai"]
 		return days[W]
 	'''
-	TYPE 2
 	https://cses.fi/dt/task/317/
 	'''
 	def max_repeat(self, s):
@@ -69,16 +63,38 @@ class Mathematics:
 				c = 1
 		return max(m, c)
 	'''
-	TYPE 1
 	https://cses.fi/dt/task/318/
 	'''
-	def miss(self, n):
-		n = int(input())
-		s = input().split()
+	def miss(self, n, s):
 		S = 0
 		for i in range(n - 1):
 			S = S + int(s[i])
 		return (n * (n + 1) // 2 - S)
+	'''
+	https://cses.fi/dt/task/319/
+	https://cses.fi/problemset/task/1071/
+	'''
+	def spiral(self, c):
+		c = c.split()
+		x = int(c[0])
+		y = int(c[1])
+		ans = 0
+		if y > x:
+			if y % 2 != 0:
+				ans = y * y - x + 1
+			else:
+				ans = (y - 1) * (y - 1) + x
+		else:
+			if x % 2 == 0:
+				ans = x * x - y + 1
+			else:
+				ans = (x - 1) * (x - 1) + y
+		return ans
+	'''
+	https://cses.fi/dt/task/320
+	'''
+	def knight(self, n):
+		return (n * n * (n * n - 1) // 2) - 4 * (n - 1) * (n - 2)
 	def sum_numbers_power1(self, n):
 		return (n * (n + 1)) / 2
 	def sum_numbers_power2(self, n):
