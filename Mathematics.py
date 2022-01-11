@@ -52,7 +52,33 @@ class Mathematics:
 			Y = Y - 1
 		W = (k + int(2.6 * m - 0.2) - 2 * C + Y + Y // 4 + C // 4) % 7
 		days = ["sunnuntai", "maanantai", "tiistai", "keskiviikko", "torstai", "perjantai", "lauantai"]
-		print(days[W])
+		return days[W]
+	'''
+	TYPE 2
+	https://cses.fi/dt/task/317/
+	'''
+	def max_repeat(self, s):
+		s = input()
+		m = float('-inf')
+		c = 1
+		for i in range(1, len(s)):
+			if s[i - 1] == s[i]:
+				c = c + 1
+			else:
+				m = max(m, c)
+				c = 1
+		return max(m, c)
+	'''
+	TYPE 1
+	https://cses.fi/dt/task/318/
+	'''
+	def miss(self, n):
+		n = int(input())
+		s = input().split()
+		S = 0
+		for i in range(n - 1):
+			S = S + int(s[i])
+		return (n * (n + 1) // 2 - S)
 	def sum_numbers_power1(self, n):
 		return (n * (n + 1)) / 2
 	def sum_numbers_power2(self, n):
