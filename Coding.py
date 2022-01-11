@@ -1,8 +1,10 @@
 class Dynamic Programming:
     '''
     TYPE 1
-    https://leetcode.com/problems/coin-change/ ---> MEDIUM
-    https://cses.fi/problemset/task/1634
+    https://leetcode.com/problems/coin-change/
+	https://cses.fi/problemset/task/1634
+	https://www.lintcode.com/problem/coin-change/description
+	https://practice.geeksforgeeks.org/problems/number-of-coins1824/1/
     '''
     def solve(self, amount, coins):
         if amount < 0:
@@ -20,8 +22,10 @@ class Dynamic Programming:
         return ans
     '''
     TYPE 1
-    https://leetcode.com/problems/coin-change/ ---> MEDIUM
-    https://cses.fi/problemset/task/1634
+    https://leetcode.com/problems/coin-change/
+	https://cses.fi/problemset/task/1634
+	https://www.lintcode.com/problem/coin-change/description
+	https://practice.geeksforgeeks.org/problems/number-of-coins1824/1/
     '''
     def solve(self, amount, coins, ready, values):
         if amount < 0:
@@ -43,8 +47,10 @@ class Dynamic Programming:
         return ans
     '''
     TYPE 1
-    https://leetcode.com/problems/coin-change/ ---> MEDIUM
-    https://cses.fi/problemset/task/1634
+    https://leetcode.com/problems/coin-change/
+	https://cses.fi/problemset/task/1634
+	https://www.lintcode.com/problem/coin-change/description
+	https://practice.geeksforgeeks.org/problems/number-of-coins1824/1/
     '''
     def solve(self, amount, coins, values):
         values[0] = 0
@@ -61,8 +67,10 @@ class Dynamic Programming:
         return ans
     '''
     TYPE 1
-    https://leetcode.com/problems/coin-change/ ---> MEDIUM
-    https://cses.fi/problemset/task/1634
+    https://leetcode.com/problems/coin-change/
+	https://cses.fi/problemset/task/1634
+	https://www.lintcode.com/problem/coin-change/description
+	https://practice.geeksforgeeks.org/problems/number-of-coins1824/1/
     '''
     def solve(self, amount, coins, values):
         for i in range(len(values)):
@@ -81,8 +89,10 @@ class Dynamic Programming:
         return ans
     '''
     TYPE 1
-    https://leetcode.com/problems/coin-change/ ---> MEDIUM
-    https://cses.fi/problemset/task/1634
+    https://leetcode.com/problems/coin-change/
+	https://cses.fi/problemset/task/1634
+	https://www.lintcode.com/problem/coin-change/description
+	https://practice.geeksforgeeks.org/problems/number-of-coins1824/1/
     '''
     def solve(self, amount, coins, values, first):
         values[0] = 0
@@ -98,13 +108,9 @@ class Dynamic Programming:
                 combination.append(first[amount])
                 amount = amount - first[amount]
         return combination
-    def coinChangeIteration(self, coins, amount):
+    def coinChangeCombination(self, coins, amount):
         ans = self.solve(amount, coins, [float('inf') for _ in range(amount + 1)], [0 for _ in range(amount + 1)])
         print(ans)
         if len(ans) == 0 and amount != 0:
             return -1
         return len(ans)
-    '''
-    
-    '''
-    def 
