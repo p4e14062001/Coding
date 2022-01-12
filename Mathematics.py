@@ -95,6 +95,101 @@ class Mathematics:
 	'''
 	def knight(self, n):
 		return (n * n * (n * n - 1) // 2) - 4 * (n - 1) * (n - 2)
+	'''
+	https://cses.fi/dt/task/321/
+	'''
+	def zeros(self, n):
+		z = 0
+		while n != 0:
+			n = n // 5
+			z = z + n
+		return z
+	'''
+	https://cses.fi/dt/task/322/
+	'''
+	def customers(self, s):
+		a = []
+		d = []
+		while t:
+			s = s.split()
+			a.append(int(s[0]))
+			d.append(int(s[1]))
+			t = t - 1
+		checka = {}
+		checkd = {}
+		for i in a:
+			if i not in checka:
+				checka[i] = 0
+			checka[i] = checka[i] + 1
+		for i in d:
+			if i not in checkd:
+				checkd[i] = 0
+			checkd[i] = checkd[i] - 1
+		timeline = sorted(list(checka.items()) + list(checkd.items()))
+		m = float('-inf')
+		c = 0
+		for i in timeline:
+			c = c + i[1]
+			m = max(m, c)
+		return m
+	'''
+	https://cses.fi/dt/task/323/
+	'''
+	def deals(self, s, w, a):
+		s = s.split()
+		n = int(s[0])
+		m = int(s[1])
+		k = int(s[2])
+		w = w.split()
+		for i in range(n):
+			w[i] = int(w[i])
+		a = a.split()
+		for i in range(m):
+			a[i] = int(a[i])
+		w.sort()
+		a.sort()
+		wishi = 0
+		geti = 0
+		deal = 0
+		while wishi != n and geti != m:
+			if w[wishi] - a[geti] > k:
+				geti = geti + 1
+			elif abs(w[wishi] - a[geti]) <= k:
+				geti = geti + 1
+				wishi = wishi + 1
+				deal = deal + 1
+			elif w[wishi] - a[geti] < - k:
+				wishi = wishi + 1
+		return deal
+	'''
+	https://cses.fi/dt/task/324
+	'''
+	def ferris(self, s, w):
+		s = s.split()
+		n = int(s[0])
+		M = int(s[1])
+		w = w.split()
+		for i in range(n):
+			w[i] = int(w[i])
+		w.sort()
+		start = 0
+		end = n - 1
+		baskets = 0
+		while start <= end:
+			baskets = baskets + 1
+			if start != end:
+				if w[start] + w[end] > M:
+					end = end - 1
+				else:
+					start = start + 1
+					end = end - 1
+			else:
+				break
+		return baskets
+	'''
+	https://cses.fi/dt/task/325
+	'''
+	def 
 	def sum_numbers_power1(self, n):
 		return (n * (n + 1)) / 2
 	def sum_numbers_power2(self, n):
