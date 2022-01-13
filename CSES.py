@@ -77,6 +77,11 @@ class Geometry:
                     x = x + 4
         return x
     '''
-    https://practice.geeksforgeeks.org/problems/check-if-two-line-segments-intersect0017/1
+    https://practice.geeksforgeeks.org/problems/checcheck-if-two-given-circles-touch-each-other5038/1
+    https://www.spoj.com/problems/CIRCINT/
     '''
-    
+    def circleTouch(self,X1,Y1,R1,X2,Y2,R2):
+        return int(((X2 - X1) ** 2 + (Y2  - Y1) ** 2) ** 0.5 <= (R1 + R2))
+    '''
+    https://practice.geeksforgeeks.org/problems/rectangles-in-a-circle0457/1
+    '''
