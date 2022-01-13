@@ -1,4 +1,4 @@
-class Mathematics:
+class CSES:
 	'''
 	https://cses.fi/dt/task/312
 	'''
@@ -189,47 +189,67 @@ class Mathematics:
 	'''
 	https://cses.fi/dt/task/325
 	'''
-	def 
-	def sum_numbers_power1(self, n):
-		return (n * (n + 1)) / 2
-	def sum_numbers_power2(self, n):
-		return (n * (n + 1) * (2 * n + 1)) / 6
-	def sum_numbers_power3(self, n):
-		return self.sum_numbers_power1(n) ** 2
-	def sum_numbers_powerk(self, n, k):
-		s = 0
-		for i in range(1, n + 1):
-			s = s + i ** k
-		return s
-	def check_ap(self, arr):
-		n = len(arr)
-		for i in range(1, n - 1):
-			if arr[i - 1] - arr[i] != arr[i] - arr[i + 1]:
-				return False
-		return True
-	def sum_ap(self, arr):
-		n = len(arr)
-		return ((arr[0] + arr[-1]) * n) / 2
-	def check_gp(self, arr):
-		n = len(arr)
-		for i in range(1, n - 1):
-			if arr[i - 1] / arr[i] != arr[i] / arr[i + 1]:
-				return False
-		return True
-	def sum_gp(self, arr):
-		n = len(arr)
-		if arr[1] / arr[0] != 1:
-		    return ((arr[-1] * (arr[1] / arr[0])) - arr[0]) / ((arr[1] / arr[0]) - 1)
-		else:
-		    print(n * arr[0])
-	def sum_hm(self, n):
-		s = 0
-		for i in range(1, n + 1):
-			s = s + (1 / i)
-		return s
-	def make_set(self, s):
-		return set(s)
-	def size_set(self, s):
-		return len(s)
-	def find(self, s, a):
-	    return a in s
+	def factory(self, s, t):
+        s = s.split()
+        n = int(s[0])
+        p = int(s[1])
+        t = t.split()
+        for i in range(n):
+            t[i] = int(t[i])
+        m = max(t)
+        left = 0
+        right = m * p + 1
+        ans = 0
+        current_p = 0
+        while left <= right:
+            mid = left + (right - left) // 2
+            current_p = 0
+            for i in range(n):
+                current_p = current_p + mid // t[i]
+            if current_p >= p:
+                ans = mid
+                right = mid - 1
+            else:
+                left = mid + 1
+        return ans
+    '''
+    https://cses.fi/dt/task/609/
+    '''
+    def order(self, n, s):
+        n = int(n)
+        s = s.split()
+        for i in range(n):
+            s[i] = int(s[i])
+        expected = n
+        for i in range(n - 1, -1, -1):
+            if s[i] == expected:
+                expected = expected - 1
+        return expected
+    '''
+    https://cses.fi/dt/task/326
+    '''
+    def partition(self, S, s):
+        S = S.split()
+        n = int(S[0])
+        k = int(S[1])
+        s = s.split()
+        for i in range(n):
+            s[i] = int(s[i])
+        left = max(s)
+        right = sum(s)
+        ans = 0
+        while left <= right:
+            mid = int(left + (right - left) / 2)
+            sa = 1
+            sums = 0
+            for i in range(n):
+                sums = sums + s[i]
+                if sums > mid:
+                    sa = sa + 1
+                    sums = s[i]
+            if sa <= k:
+                ans = mid
+                right = mid - 1
+            else:
+                left = mid + 1
+        return ans
